@@ -11,7 +11,7 @@ describe('GET /users', () => {
         port: MOCK_BOOK_API_PORT,
         log: path.resolve(process.cwd(), 'logs', 'pact.log'),
         dir: path.resolve(process.cwd(), 'pacts'),
-        logLevel: 'INFO',
+        logLevel: 'DEBUG',
         spec: 2
     })
     const EXPECTED_BOOKS_RESPONSE = [
@@ -22,7 +22,7 @@ describe('GET /users', () => {
 
     let app = buildServer(`http://localhost:${MOCK_BOOK_API_PORT}`)
 
-    before((done) => {
+    before((dn) => {
         provider.setup()
             .then(() => {
                 return provider.addInteraction({
@@ -43,7 +43,7 @@ describe('GET /users', () => {
                     }
                 })
             })
-            .then(() => done())
+            .then(() => dn())
     })
 
     it('respond with json', (done) => {
