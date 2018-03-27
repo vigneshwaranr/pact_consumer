@@ -2,7 +2,6 @@ pipeline {
   agent {
     docker {
       image 'node:8.10.0'
-      args '-v "/var/jenkins_home/yarn:/home/node/.cache/yarn"'
     }
     
   }
