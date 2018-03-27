@@ -1,4 +1,5 @@
 import pact from '@pact-foundation/pact-node'
+import path from 'path'
 
 let opts = {
     consumerVersion: "1.0.0",
