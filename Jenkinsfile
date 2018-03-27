@@ -6,14 +6,9 @@ pipeline {
     
   }
   stages {
-    stage('Lint') {
-      steps {
-        sh 'npm lint'
-      }
-    }
     stage('Test') {
       steps {
-        sh 'npm test'
+        sh 'npm install && npm test'
       }
     }
   }
