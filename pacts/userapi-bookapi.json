@@ -1,0 +1,47 @@
+{
+  "consumer": {
+    "name": "UserAPI"
+  },
+  "provider": {
+    "name": "BookAPI"
+  },
+  "interactions": [
+    {
+      "description": "a request for books",
+      "providerState": "i have a list of books",
+      "request": {
+        "method": "GET",
+        "path": "/books",
+        "query": "ids=1%2C2%2C3",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "id": "1",
+            "name": "Book 1"
+          },
+          {
+            "id": "2",
+            "name": "Book 2"
+          },
+          {
+            "id": "3",
+            "name": "Book 3"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
