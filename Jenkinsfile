@@ -8,13 +8,12 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh '''
-npm install && npm test'''
+        sh 'yarn && npm test'
       }
     }
     stage('Publish pacts') {
       steps {
-        sh 'npm install && npm run publishPacts'
+        sh 'yarn && npm run publishPacts'
       }
     }
   }
