@@ -38,7 +38,7 @@ describe('GET /users', () => {
                     },
                     willRespondWith: {
                         status: 200,
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type': 'application/json; charset=utf-8' },
                         body: EXPECTED_BOOKS_RESPONSE
                     }
                 })
