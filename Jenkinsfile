@@ -14,8 +14,11 @@ npm install && npm test'''
     }
     stage('Publish pacts') {
       steps {
-        sh 'npm install && PACT_BROKER_URL=http://docker.for.mac.host.internal:8081 npm run publishPacts'
+        sh 'npm install && npm run publishPacts'
       }
     }
+  }
+  environment {
+    PACT_BROKER_URL = 'http://docker.for.mac.host.internal:8081'
   }
 }
