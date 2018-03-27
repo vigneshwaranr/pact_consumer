@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --exit -r @babel/register __tests__/testGlobals.js **/__tests__",
+    "test": "NODE_ENV=test mocha -t 10000 --exit -r @babel/register __tests__/testGlobals.js **/__tests__",
     "start": "babel-node index.js",
     "publishPacts": "babel-node bin/publishPacts.js"
   },
