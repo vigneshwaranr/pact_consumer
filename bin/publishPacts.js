@@ -1,8 +1,9 @@
 import pact from '@pact-foundation/pact-node'
+import path from 'path'
 
 let opts = {
-    consumerVersion: "1.0.0",
+    consumerVersion: process.env.npm_package_version,
     pactBroker: process.env.PACT_BROKER_URL,
     pactFilesOrDirs: [path.resolve(process.cwd(), 'pacts')]
 }
-pact.publishPacts(opts).then(() => { console.log("Pact files uploaded.") })
+pact.publishPacts(opts).then(() => { done() })

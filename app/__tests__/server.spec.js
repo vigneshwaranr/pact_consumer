@@ -22,7 +22,9 @@ describe('GET /users', () => {
 
     let app = buildServer(`http://localhost:${MOCK_BOOK_API_PORT}`)
 
-    before((dn) => {
+    before(function (done) {
+        this.timeout(30000)
+        
         provider.setup()
             .then(() => {
                 return provider.addInteraction({
@@ -38,12 +40,12 @@ describe('GET /users', () => {
                     },
                     willRespondWith: {
                         status: 200,
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type': 'application/json; charset=utf-8' },
                         body: EXPECTED_BOOKS_RESPONSE
                     }
                 })
             })
-            .then(() => dn())
+            .then(() => done())
     })
 
     it('respond with json', (done) => {
