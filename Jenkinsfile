@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Verify Contract') {
       steps {
-        sh 'yarn && npm verifyContract'
+        sh 'yarn && npm run verifyContract'
       }
     }
   }
