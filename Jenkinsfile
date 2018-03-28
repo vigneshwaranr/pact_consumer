@@ -16,11 +16,6 @@ pipeline {
         sh 'yarn && npm run publishPacts'
       }
     }
-    stage('Verify Contract') {
-      steps {
-        sh 'yarn && npm run verifyContract'
-      }
-    }
   }
   environment {
     PACT_BROKER_URL = 'http://docker.for.mac.host.internal:8081'
